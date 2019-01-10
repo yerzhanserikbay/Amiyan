@@ -4,8 +4,7 @@ import { View, StyleSheet } from 'react-native';
 class Footer extends Component {
     render() {
         return (
-            <View>
-            </View>
+            <View></View>
         );
     }
 }

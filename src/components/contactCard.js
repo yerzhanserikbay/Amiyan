@@ -5,7 +5,7 @@ import QRCode from 'react-native-qrcode';
 class ContactCard extends Component {
     constructor(props) {
         super(props);
-    }
+    } 
 
     componentWillMount() {
         console.log('here' + this.props.data)

@@ -23,11 +23,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.openScanViewController = this.openScanViewController.bind(this);
-    this.openFirstContactBlankViewController = this.openFirstContactBlankViewController.bind(this);
-    this.openSecondContactBlankViewController = this.openSecondContactBlankViewController.bind(this);
-    this.openIdCardBlankViewController = this.openIdCardBlankViewController.bind(this);
-    this.openSettingsViewController = this.openSettingsViewController.bind(this);
+
   }
 
   data = {
@@ -41,23 +37,23 @@ class App extends Component {
     email: String,    
   }
 
-  openScanViewController() {
+  openScanViewController = () => {
     this.props.navigation.navigate('Scan')
   }
 
-  openFirstContactBlankViewController() {
+  openFirstContactBlankViewController = () => {
     this.props.navigation.navigate('ContactForm', { card: 'firstProfile'})
   }
 
-  openSecondContactBlankViewController() {
+  openSecondContactBlankViewController = () => {
     this.props.navigation.navigate('ContactForm', { card: 'secondProfile'})
   }
 
-  openIdCardBlankViewController() {
+  openIdCardBlankViewController = () => {
     this.props.navigation.navigate('IdCardForm')
   }
 
-  openSettingsViewController() {
+  openSettingsViewController = () => {
     this.props.navigation.navigate('Settings')
   }
 
@@ -85,6 +81,8 @@ class App extends Component {
     console.log(this.profilesData('firstProfile'))
   }
 
+
+
   render() {
     return (
       <View style={[StyleSheet.absoluteFill, styles.container]}>
@@ -98,11 +96,12 @@ class App extends Component {
           containerStyle={styles.cards}
           onScrollEnd={() => console.log('Hello!')}> 
           <IdCard
-            setBlank={this.openIdCardBlankViewController}/>
+            setBlank={this.openIdCardBlankViewController}/> 
+            {/* setBlank={() => this.openIdCardBlankViewController}/>  */}
           <ContactCard
             setBlank={this.openFirstContactBlankViewController}
             card={'firstProfile'}
-            title={this.profilesData('firstProfile').title}
+            // title={this.profilesData('firstProfile').title}
             subtitle={'Description'}
             data={this.profilesData('firstProfile')}/>
           <ContactCard
