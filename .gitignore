@@ -117,3 +117,4 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 >>>>>>> 843c9c021524e5d2344fb8cf7e890ce479352be6
+.DS_Store
